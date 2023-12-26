@@ -46,9 +46,9 @@
   </div>
 </nav> -->
 
-<div class="container-fluid mt-3 mb-3 p-2">
+<div class="container mt-3">
     <div class="row">
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-white" style="width: 280px;">
     <a href="../index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
       <span class="fs-4">Food Culinary</span>
@@ -74,7 +74,7 @@
         </a>
       </li>
       <li>
-        <a href="./foods.php" class="nav-link link-dark">
+        <a href="../foods.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           Foods
         </a>
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-        <div class=" col col-lg-9">
+        <div class="col col-lg-9 p-4">
             <div class="border rounded-md shadow p-4 m-2">
                 <h4>Foods </h4>
                 <?php

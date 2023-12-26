@@ -11,7 +11,7 @@
 </head>
 <body class="responsive">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Food Culinary</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -51,6 +51,11 @@
         <div class=" col col-lg-9">
             <div class="border rounded-md shadow p-4 m-2">
                 <div class="row">
+                        <?php
+                            $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
+                            $query = mysqli_query($conn, "SELECT * FROM foods");
+                            while ($baris = mysqli_fetch_assoc($query)) {
+                        ?>
                     <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="asset/img/kelrelastabel.jpeg" class="card-img-top" alt="...">
@@ -63,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+                        <?php } ?>
                     <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="..." class="card-img-top" alt="...">

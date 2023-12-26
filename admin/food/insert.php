@@ -13,9 +13,11 @@ if (isset($_POST['insert'])) {
             $target = "../../asset/img/" . basename($_FILES['image_food']['name']);
 
             if (move_uploaded_file($_FILES['image_food']['tmp_name'], $target)) {
-                echo "Gambar barang berhasil diupload";
+                // echo "Gambar barang berhasil diupload";
+                $gambar_makanan = $_FILES['image_food']['name'];
             } else {
-                echo "gagl upload";
+                // echo "gagl upload";
+                $gambar_makanan = null;
             }
         }
 
@@ -33,9 +35,17 @@ if (isset($_POST['insert'])) {
 
         //query untuk simpan makanan
         $koneksikan = mysqli_connect('localhost', 'root', '', 'food_culinary');
+        // if($koneksikan){
+        //     echo "sukses";
+        // }
         // $query = "INSERT INTO foods SET name_food='$nama', price='$price', deskripsi='$description', category='$category', image_food='$gambar_makanan', created_at='$created_at', updated_at='$updated_at'";
-        $query = "INSERT INTO foods (name_food, price, deskripsi, category, image_food, created_at, updated_at) VALUES ('Peter', 'Parker', 'peterparker@mail.com')";
+        $query = "INSERT INTO foods (name_food, price, deskripsi, category, image_food, created_at, updated_at) VALUES ('$nama', '$price', '$description', '$category', '$gambar_makanan', '$created_at', '$updated_at')";
         $prosesquery = mysqli_query($koneksikan, $query);
+
+        // if($prosesquery)
+        // {
+        //     echo "sukses proses";
+        // }
 
         // if(isset($_FILES['image'])){
         //     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -46,7 +56,7 @@ if (isset($_POST['insert'])) {
         // }
         
     // }
-    // echo "<script>alert('Sukses Menambahkan Makanan!'); location = '../foods.php'</script>";
+    echo "<script>alert('Sukses Menambahkan Makanan!'); location = '../foods.php'</script>";
 } else {
     echo "<script>alert('Gagal Menambahkan Makanan!'); location = './create.php'</script>";
 }
