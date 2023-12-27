@@ -93,19 +93,6 @@
       </li>
     </ul>
     <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
-      </a>
-      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
   </div>
 
         <div class="col col-lg-9 p-4">
@@ -118,7 +105,7 @@
                 ?>
                 <div class="row">
                     <div class="col">
-                        <form action="insert.php" method="POST" enctype="multipart/form-data">
+                        <form action="update.php" method="POST" enctype="multipart/form-data">
                         <?php
                             $id_makanan = $_GET['id'];
                             $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
@@ -126,6 +113,7 @@
                             $baris = mysqli_fetch_assoc($query);
                             // while ($baris = mysqli_fetch_assoc($query)) {}
                         ?>
+                            <input type="hidden" name="id" id="id" value="<?= $baris['id'] ?>">
                             <div class="form-group">
                                 <label for="name">Name Food</label>
                                 <input type="text" name="name_food" id="name_food" class="form-control" value="<?= $baris['name_food']; ?>">

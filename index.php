@@ -52,6 +52,7 @@
                             <div class="card-body">                                
                                 <h5 class="card-title"><?= $baris['name_food'] ?></h5>
                                 <p class="card-text">
+                                    Category : <?= $baris['category'] ?> <br>
                                     Harga Rp.<?= $baris['price'] ?>
                                 </p>
                                 <!-- <a href="./food/edit.php?id=<?php //echo $baris['id'] ?>" class="btn btn-warning"> edit</a> -->
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                         <?php } ?>
-                    <div class="col col-md-3 p-3 m-2">
+                    <!-- <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
@@ -70,8 +71,8 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-md-3 p-3 m-2">
+                    </div> -->
+                    <!-- <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
@@ -80,8 +81,8 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-md-3 p-3 m-2">
+                    </div> -->
+                    <!-- <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
@@ -90,7 +91,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>                
             </div>
         </div>

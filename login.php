@@ -34,10 +34,10 @@
 
 <div class="container-fluid mt-3 mb-3 p-2">
     <div class="row">
-        <div class=" col col-lg-12">
+        <div class=" col mx-auto col-md-8">
             <div class="border rounded-md shadow p-4 m-2">
                 <div class="row">
-                    <div class="col  p-3 m-2">
+                    <div class="col col-md-6 mx-auto p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <h3>Login</h3>
                             <form action="access.php" method="POST">
