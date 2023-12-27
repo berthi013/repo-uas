@@ -68,7 +68,7 @@
         </a>
       </li>
       <li>
-        <a href="./orders.php" class="nav-link link-dark">
+        <a href="../orders.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Orders
         </a>
@@ -80,13 +80,13 @@
         </a>
       </li>
       <li>
-        <a href="users.php" class="nav-link link-dark">
+        <a href="../users.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Customers
         </a>
       </li>
       <li>
-        <a href="logout.php" class="nav-link link-dark">
+        <a href="../logout.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Logout
         </a>

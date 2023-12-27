@@ -125,18 +125,29 @@ if (!isset($_SESSION['email'])) {
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
+                                $query = mysqli_query($conn, "SELECT * FROM foods");
+                                while ($baris = mysqli_fetch_assoc($query)) {
+                            ?>
                                 <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row"><?= $baris['id'] ?></th>
+                                <td><?= $baris['name_food']; ?></td>
+                                <td><?= $baris['price']; ?></td>
+                                <td><?= $baris['category']; ?></td>
+                                <td>
+                                    <a href="./food/edit.php?id=<?php echo $baris['id'] ?>" class="btn btn-warning"> edit</a>
+                                    <a href="" class="btn btn-danger"> hapus</a>
+                                </td>
                                 </tr>
+                            <?php } ?>
                             </tbody>
                         </table>
 
