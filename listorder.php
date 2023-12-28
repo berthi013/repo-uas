@@ -35,6 +35,7 @@
     <div class="row">
         <div class=" col mx-auto col-lg-8">
             <div class="border rounded-md shadow p-4 m-2">
+                <h4 class="px-4">Waiting List Order</h4>
                 <div class="row">
                         <?php
                             $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
@@ -42,11 +43,11 @@
                             // $baris = mysqli_fetch_assoc($query);
                             // if($baris > 0)
                             // {  
-                            while ( $baris = mysqli_fetch_assoc($query))
+                            // while ( $baris = mysqli_fetch_assoc($query))
                             // var_dump($baris);                                                      
-                              {
+                              //{
                         ?>
-                    <div class="col col-md-3 p-3 m-2">
+                    <div class="col col-lg-10 mx-auto p-3 m-2">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -63,7 +64,7 @@
                             <tbody>
                                 <?php
                                     $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
-                                    $query = mysqli_query($conn, "SELECT * FROM foods");
+                                    $query = mysqli_query($conn, "SELECT * FROM orders");
                                     while ($baris = mysqli_fetch_assoc($query)) {
                                 ?>
                                     <tr>
@@ -73,7 +74,20 @@
                                         <td><?= $baris['price']; ?></td>
                                         <td><?= $baris['qty']; ?></td>
                                         <td><?= $baris['total']; ?></td>
-                                        <td><?= $baris['status']; ?></td>
+                                        <td>
+                                            <?php
+                                                if($baris['status'] == 2)
+                                                {
+                                            ?>
+                                            Pending
+                                            <?php
+                                                }else{
+                                             ?>
+                                            Done
+                                            <?php 
+                                                }
+                                            ?>
+                                        </td>
                                         <td><?= $baris['created_at']; ?></td>
                                     
                                     </tr>
@@ -82,7 +96,7 @@
                         </table>
                         
                     </div>
-                        <?php }
+                        <?php //}
                     // }else{ ?>
                         <!-- <div class="mx-auto">
                             Belum ada list order

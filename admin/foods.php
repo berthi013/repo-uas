@@ -68,12 +68,7 @@ if (!isset($_SESSION['email'])) {
                   Home
                 </a>
               </li>
-              <li>
-                <a href="#" class="nav-link link-dark">
-                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                  Dashboard
-                </a>
-              </li>
+              
               <li>
                 <a href="orders.php" class="nav-link link-dark">
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>

@@ -9,10 +9,10 @@ if (!isset($_SESSION['email'])) {
 if(isset($_POST['update']))
 {
     $koneksikan = mysqli_connect('localhost', 'root', '', 'food_culinary');
-    $id_food = $_POST['id_food'];
+    $id_food = $_POST['id'];
 
-    $img_food = $_POST['image_food'];
-    $oldimg = "SELECT * FROM foods WHERE id='$id_food'";
+    // $img_food = $_POST['image_food'];
+    // $oldimg = "SELECT * FROM foods WHERE id='$id_food'";
 
     // $get_old_img = $prosesquery = mysqli_query($koneksikan, $oldimg);
     // var_dump( $get_old_img);
@@ -33,11 +33,14 @@ if(isset($_POST['update']))
 
     $nama = $_POST['name_food'];
     $price = $_POST['price'];
-    $description = $_POST['description'];
+    $description = $_POST['deskripsi'];
     $category = $_POST['category'];
+    // $status = 1;
     // $created_at = date("Y/m/d H:i:s");
     $updated_at = date("Y/m/d H:i:s");
-    $query = "UPDATE foods SET name_food='$nama', price='$price', deskripsi='$description', category='$category', status='$status', updated_at='$updated_at' WHERE id='$id_order'";
+    // var_dump($id_food, $nama, $price, $description, $category);
+    $query = "UPDATE foods SET `name_food`='$nama', `price`='$price', `deskripsi`='$description', `category`='$category', `updated_at`='$updated_at' WHERE id=$id_food";
+    $prosesquery = mysqli_query($koneksikan, $query);
 
     echo "<script>alert('Sukses Mengupdate Makanan!'); location = '../foods.php'</script>";
 }else{

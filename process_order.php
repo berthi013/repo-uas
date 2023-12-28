@@ -12,7 +12,7 @@ if(isset($_POST['process'])){
     $created_at = date("Y/m/d H:i:s");
     $updated_at = date("Y/m/d H:i:s");
     $status = 2;
-    var_dump($name_food, $name_order, $food_id, $price, $qty, $total);
+    // var_dump($name_food, $name_order, $food_id, $price, $qty, $total, $created_at, $updated_at);
 
     //query untuk simpan order
     $koneksikan = mysqli_connect('localhost', 'root', '', 'food_culinary');

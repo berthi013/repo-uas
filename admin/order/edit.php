@@ -26,12 +26,7 @@
           Home
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Dashboard
-        </a>
-      </li>
+      
       <li>
         <a href="../orders.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
@@ -62,7 +57,7 @@
 
         <div class="col col-lg-9 p-4">
             <div class="border rounded-md shadow p-4 m-2">
-                <h4>Foods </h4>
+                <h4>Confirmation Order </h4>
                 <?php
                 // use Carbon\Carbon;
                 // $carbon = date("Y/m/d H:i:s");
@@ -70,7 +65,7 @@
                 ?>
                 <div class="row">
                     <div class="col">
-                        <form action="update.php" method="POST" enctype="multipart/form-data">
+                        <form action="./update.php" method="POST" enctype="multipart/form-data">
                         <?php
                             $id_order = $_GET['id'];
                             $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
@@ -103,7 +98,7 @@
                             <div class="form-group">
                                 <label for="category">Status Konfirmasi</label>
                                 <select name="category" id="category" class="form-control">
-                                    <option value="">Pilih Category</option>
+                                    <option value="">Pilih Status Konfirmasi</option>
                                     <option value="1"  >Konfirmasi</option>
                                     <option value="2" >Pending</option>
                                 </select>

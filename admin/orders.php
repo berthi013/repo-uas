@@ -33,12 +33,7 @@ if (!isset($_SESSION['email'])) {
                   Home
                 </a>
               </li>
-              <li>
-                <a href="#" class="nav-link link-dark">
-                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                  Dashboard
-                </a>
-              </li>
+              
               <li>
                 <a href="orders.php" class="nav-link active">
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
@@ -68,9 +63,9 @@ if (!isset($_SESSION['email'])) {
       </div>
 
         <div class="col col-lg-9 p-2">
-          <a href="food/create.php" class="btn btn-primary m-2">Add a New food</a>
+          <!-- <a href="food/create.php" class="btn btn-primary m-2">Add a New food</a> -->
             <div class="border rounded-md shadow p-4 m-2">
-                <h4>Foods </h4>
+                <h4>Orders List </h4>
                 <div class="row">
                     <div class="col">
                         <table class="table">
@@ -102,11 +97,19 @@ if (!isset($_SESSION['email'])) {
                                   <td><?= $baris['price']; ?></td>
                                   <td><?= $baris['qty']; ?></td>
                                   <td><?= $baris['total']; ?></td>
-                                  <td><?= $baris['status']; ?></td>
+                                  <td>
+                                      <?php
+                                        if($baris['status'] == 2)
+                                        { ?>
+                                        Pending
+                                      <?php }else{  ?>
+                                        Done
+                                      <?php } ?>
+                                  </td>
                                   <td><?= $baris['created_at']; ?></td>
                                   <td>
-                                      <a href="./food/edit.php?id=<?php echo $baris['id'] ?>" class="btn btn-warning"> edit</a>
-                                      <a href="" class="btn btn-danger"> hapus</a>
+                                      <a href="./order/edit.php?id=<?php echo $baris['id'] ?>" class="btn btn-warning"> Konfirmasi</a>
+                                      <!-- <a href="" class="btn btn-danger"> hapus</a> -->
                                   </td>
                                 </tr>
                             <?php }

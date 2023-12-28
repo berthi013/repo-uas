@@ -88,7 +88,7 @@
                                     <input type="hidden" name="name_food" id="name_food" value="<?= $baris['name_food'] ?>">
 
                                     <div class="form-group">
-                                        <button name="process" class="btn btn-primary">Order Now</button>
+                                        <button type="submit" name="process" class="btn btn-primary">Order Now</button>
                                     </div>
                                 </form>
                                 </div>

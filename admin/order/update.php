@@ -10,7 +10,7 @@ if(isset($_POST['update']))
 {
     $koneksikan = mysqli_connect('localhost', 'root', '', 'food_culinary');
     $id_order = $_POST['id'];
-    $status = $_POST['status'];
+    $status = 1;
     $updated_at = date("Y/m/d H:i:s");
     $query = "UPDATE orders SET status='$status', updated_at='$updated_at' WHERE id='$id_order'";
     $prosesquery = mysqli_query($koneksikan, $query);
