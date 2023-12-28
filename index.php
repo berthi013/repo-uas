@@ -22,6 +22,9 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="listorder.php">List Order</a>
+      </li>   
+      <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>      
     </ul>
@@ -40,6 +43,8 @@
                         <?php
                             $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
                             $query = mysqli_query($conn, "SELECT * FROM foods");
+                            // $baris = mysqli_fetch_assoc($query);
+                            // if($baris > 0){
                             while ($baris = mysqli_fetch_assoc($query)) {
                         ?>
                     <div class="col col-md-3 p-3 m-2">
@@ -61,7 +66,12 @@
                             </div>
                         </div>
                     </div>
-                        <?php } ?>
+                        <?php }
+                        // }else{ ?>
+                            <!-- <div class="mx-auto">
+                                Belum ada menu
+                            </div> -->
+                        <?php //}?>
                     <!-- <div class="col col-md-3 p-3 m-2">
                         <div class="card p-3" style="width: auto;">
                             <img src="..." class="card-img-top" alt="...">

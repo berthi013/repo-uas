@@ -100,19 +100,6 @@ if (!isset($_SESSION['email'])) {
               </li>
             </ul>
             <hr>
-            <!-- <div class="dropdown">
-              <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>mdo</strong>
-              </a>
-              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-              </ul>
-            </div> -->
       </div>
 
         <div class="col col-lg-9 p-4">
@@ -136,6 +123,8 @@ if (!isset($_SESSION['email'])) {
                             <?php
                                 $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
                                 $query = mysqli_query($conn, "SELECT * FROM foods");
+                                // $baris_row = mysqli_fetch_assoc($query);
+                                // if($baris_row > 0 ){
                                 while ($baris = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tr>
@@ -149,7 +138,12 @@ if (!isset($_SESSION['email'])) {
                                     <a href="" class="btn btn-danger"> hapus</a>
                                 </td>
                                 </tr>
-                            <?php } ?>
+                            <?php }
+                           // }else{ ?>
+                                  <tr>
+                                    <!-- <td class="mx-auto" colspan="9">Belum ada list makanan</td> -->
+                                  </tr>
+                            <?php //} ?>
                             </tbody>
                         </table>
 

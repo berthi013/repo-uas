@@ -10,10 +10,12 @@ if(isset($_POST['update']))
 {
     $koneksikan = mysqli_connect('localhost', 'root', '', 'food_culinary');
     $id_food = $_POST['id_food'];
+
+    $img_food = $_POST['image_food'];
     $oldimg = "SELECT * FROM foods WHERE id='$id_food'";
 
-    $get_old_img = $prosesquery = mysqli_query($koneksikan, $oldimg);
-    var_dump( $get_old_img);
+    // $get_old_img = $prosesquery = mysqli_query($koneksikan, $oldimg);
+    // var_dump( $get_old_img);
 
     $gambar_makanan = null;
     if(isset($_FILES['image_food'])){
@@ -35,4 +37,9 @@ if(isset($_POST['update']))
     $category = $_POST['category'];
     // $created_at = date("Y/m/d H:i:s");
     $updated_at = date("Y/m/d H:i:s");
+    $query = "UPDATE foods SET name_food='$nama', price='$price', deskripsi='$description', category='$category', status='$status', updated_at='$updated_at' WHERE id='$id_order'";
+
+    echo "<script>alert('Sukses Mengupdate Makanan!'); location = '../foods.php'</script>";
+}else{
+    echo "<script>alert('Gagal Mengupdate Makanan!'); location = '../foods.php'</script>";
 }

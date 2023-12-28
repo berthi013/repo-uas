@@ -22,6 +22,9 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="listorder.php">List Order</a>
+      </li>   
+      <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>          
     </ul>
@@ -52,7 +55,7 @@
                             <div class="card">
                                 <div class="card-body mx-auto justify-content-center">                                
                                 
-                                <form action="process.php" method="POST">
+                                <form action="process_order.php" method="POST">
                                     <?php if($baris['image_food']) { ?>
                                         <img src="./asset/img/'<?= $baris['image_food'] ?>'"  class="card-img-top" style="height: 100%; max-height: 250px; width: auto; max-width: 200px;" alt="">
                                     <?php }else{ ?>
@@ -85,7 +88,7 @@
                                     <input type="hidden" name="name_food" id="name_food" value="<?= $baris['name_food'] ?>">
 
                                     <div class="form-group">
-                                        <button class="btn btn-primary">Order Now</button>
+                                        <button name="process" class="btn btn-primary">Order Now</button>
                                     </div>
                                 </form>
                                 </div>
