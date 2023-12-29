@@ -39,12 +39,12 @@
           Foods
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="../users.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Customers
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="../logout.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>

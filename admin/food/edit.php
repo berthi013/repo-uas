@@ -38,12 +38,12 @@
           Foods
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="../users.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Customers
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="../logout.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
@@ -91,6 +91,7 @@
                                     <option value="">Pilih Category</option>
                                     <option value="makanan" <?php if($baris['category'] == 'makanan'){  ?>selected <?php }?> >Makanan</option>
                                     <option value="minuman" <?php if($baris['category'] == 'minuman'){  ?>selected <?php }?>>Minuman</option>
+                                    <option value="snack" <?php if($baris['category'] == 'snack'){  ?>selected <?php }?>>Snack</option>
                                 </select>
                             </div>
                             <div class="form-group">

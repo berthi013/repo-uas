@@ -22,6 +22,9 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="listorder.php">List Order</a>
+      </li>   
+      <li class="nav-item">
         <a class="nav-link" href="login.php">Login</a>
       </li>      
     </ul>
@@ -36,10 +39,14 @@
     <div class="row">
         <div class=" col col-lg-9">
             <div class="border rounded-md shadow p-4 m-2">
+                <h4>Menu Here</h4>
                 <div class="row">
                         <?php
+                            $category = $_GET['category'];
                             $conn = mysqli_connect('localhost', 'root', '', 'food_culinary');
-                            $query = mysqli_query($conn, "SELECT * FROM foods");
+                            $query = mysqli_query($conn, "SELECT * FROM foods WHERE category='$category'");
+                            // $baris = mysqli_fetch_assoc($query);
+                            // if($baris > 0){
                             while ($baris = mysqli_fetch_assoc($query)) {
                         ?>
                     <div class="col col-md-3 p-3 m-2">
@@ -52,61 +59,26 @@
                             <div class="card-body">                                
                                 <h5 class="card-title"><?= $baris['name_food'] ?></h5>
                                 <p class="card-text">
+                                    Category : <?= $baris['category'] ?> <br>
                                     Harga Rp.<?= $baris['price'] ?>
                                 </p>
-                                <!-- <a href="./food/edit.php?id=<?php //echo $baris['id'] ?>" class="btn btn-warning"> edit</a> -->
 
                                 <a href="orders.php?id=<?= $baris['id'] ?>" class="btn btn-primary">Proccess Order</a>
                             </div>
                         </div>
                     </div>
-                        <?php } ?>
-                    <div class="col col-md-3 p-3 m-2">
-                        <div class="card p-3" style="width: auto;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-3 p-3 m-2">
-                        <div class="card p-3" style="width: auto;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-3 p-3 m-2">
-                        <div class="card p-3" style="width: auto;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
+                        <?php } ?>                            
+                   
                 </div>                
             </div>
         </div>
         <div class="col col-lg-3">
             <div class="border rounded-md p-2 m-2">      
-                <h4>List Category</h4> 
-                <form action="">
-                    
-                </form>               
+                <h4>List Category</h4>              
                 <ul class="list-group p-2">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
-                </ul>
+                    <li class="list-group-item"><a href="category.php?category=makanan" style="color:black;">Makanan</a></li>
+                    <li class="list-group-item"><a href="category.php?category=minuman" style="color:black;">Minuman</a></li>
+                    <li class="list-group-item"><a href="category.php?category=snack" style="color:black;">Snack</a></li>
             </div>
         </div>
     </div>

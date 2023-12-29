@@ -39,12 +39,12 @@
           Foods
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="../users.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Customers
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="../logout.php" class="nav-link link-dark">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
@@ -84,6 +84,7 @@
                                     <option value="">Pilih Category</option>
                                     <option value="makanan">Makanan</option>
                                     <option value="minuman">Minuman</option>
+                                    <option value="snack">Snack</option>
                                 </select>
                             </div>
                             <div class="form-group">

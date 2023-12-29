@@ -16,7 +16,7 @@ if(isset($_POST['update']))
     $prosesquery = mysqli_query($koneksikan, $query);
     // "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 
-    echo "<script>alert('Sukses Mengkonfirmasi Order!'); location = '../foods.php'</script>";
+    echo "<script>alert('Sukses Mengkonfirmasi Order!'); location = '../orders.php'</script>";
 }else{
-    echo "<script>alert('Gagal Mengkonfirmasi Order!'); location = '../foods.php'</script>";
+    echo "<script>alert('Gagal Mengkonfirmasi Order!'); location = '../orders.php'</script>";
 }
